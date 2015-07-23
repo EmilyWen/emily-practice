@@ -1,0 +1,36 @@
+{
+  "name": "emily-practice",
+  "version": "1.0.0",
+  "description": "react practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmilyWen/emily-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmilyWen/emily-practice/issues"
+  },
+  "homepage": "https://github.com/EmilyWen/emily-practice#readme",
+  "dependencies": {
+    "mdl-react": "~0.0.3",
+    "react": "~0.13.3",
+    "gulp-uglify": "~1.2.0"
+  },
+  "devDependencies": {
+    "browserify": "~10.2.6",
+    "del": "~1.2.0",
+    "gulp": "~3.9.0",
+    "gulp-rename": "~1.2.2",
+    "gulp-uglify": "~1.2.0",
+    "gulp-util": "~3.0.5",
+    "gulp-connect": "~2.2.0",
+    "reactify": "~1.1.1",
+    "watchify": "~3.2.3",
+    "vinyl-source-stream": "~1.1.0"
+  }
+}
