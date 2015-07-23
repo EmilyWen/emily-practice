@@ -19,7 +19,9 @@
   "dependencies": {
     "mdl-react": "~0.0.3",
     "react": "~0.13.3",
-    "gulp-uglify": "~1.2.0"
+    "gulp-uglify": "~1.2.0",
+    "lodash": "~3.10.0",
+    "vinyl-buffer": "~1.0.0"
   },
   "devDependencies": {
     "browserify": "~10.2.6",
