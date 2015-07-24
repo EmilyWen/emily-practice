@@ -19,12 +19,12 @@ var App = React.createClass({displayName: "App",
 			'url("http://i.imgur.com/L5YFTxg.png") bottom right 15% no-repeat #46B6AC',
 		};
 		var cardStyle_1 = {
-			margin: '50px 350px',
+			margin: '50px 350px 0px ',
 		};
 		//card_2 style
 		var cardStyle_2 = {
 			background: 'url("http://i.imgur.com/ZD4iVTs.jpg") center / cover',
-			margin: '30px 350px',
+			margin: '0px 0px 0px 350px',
 		};
 		var actionStyle_2 = {
 			color : '#ffffff',
@@ -32,12 +32,8 @@ var App = React.createClass({displayName: "App",
 			padding: '16px',
 			background: 'rgba(0, 0, 0, 0.2)',
 		};
-		var inlineStyle = {
-			display: 'inline',
-		};
 		//card_3 style
 		var cardStyle_3 = {
-			margin : '30px 50px',
 			background: '#3E4EB8',
 			color: '#ffffff',
 		};
@@ -54,41 +50,46 @@ var App = React.createClass({displayName: "App",
 				isFixedHeader: true, 
 				headerLinks: links
 			}, 
-				
-				React.createElement(MDL.Card, {width: "860", height: "450", shadow: 8, style: cardStyle_1}, 
-					React.createElement(MDL.CardTitle, {height: "350", style: titleStyle}, 
-						"The First Article"
-					), 
-					React.createElement(MDL.CardSupportingText, null, 
-						"The first Card."
-					), 
-					React.createElement(MDL.CardAction, {border: true}, 
-						React.createElement(MDL.Button, {type: "FlatButton", isPrimary: true}, 
-							"Read More"
+				React.createElement(MDL.Grid, null, 
+					React.createElement(MDL.GridCell, {col: 12}, 
+						React.createElement(MDL.Card, {width: "860", height: "450", shadow: 8, style: cardStyle_1}, 
+							React.createElement(MDL.CardTitle, {height: "350", style: titleStyle}, 
+								"The First Article"
+							), 
+							React.createElement(MDL.CardSupportingText, null, 
+								"The first Card."
+							), 
+							React.createElement(MDL.CardAction, {border: true}, 
+								React.createElement(MDL.Button, {type: "FlatButton", isPrimary: true}, 
+									"Read More"
+								)
+							)
 						)
 					)
 				), 
-
-				React.createElement("span", {style: inlineStyle}, 
-					React.createElement(MDL.Card, {width: "556", height: "326", style: cardStyle_2, shadow: 2}, 
-						React.createElement(MDL.CardTitle, {height: "326"}), 
-						React.createElement(MDL.CardAction, {style: actionStyle_2}, 
-							React.createElement("span", {className: "demo-card-image__filename"}, "Image.jpg")
+				React.createElement(MDL.Grid, null, 
+					React.createElement(MDL.GridCell, {col: 8}, 
+						React.createElement(MDL.Card, {width: "556", height: "326", style: cardStyle_2, shadow: 8}, 
+							React.createElement(MDL.CardTitle, {height: "326"}), 
+							React.createElement(MDL.CardAction, {style: actionStyle_2}, 
+								React.createElement("span", {className: "demo-card-image__filename"}, "Image.jpg")
+							)
 						)
 					), 
-				
-					React.createElement(MDL.Card, {width: "256", height: "256", style: cardStyle_3, shadow: 2}, 
-						React.createElement(MDL.CardTitle, {height: "203"}, 
-							React.createElement("h4", {style: colorStyle}, 
-								"Featured event:", React.createElement("br", null), 
-								"May 24, 2016", React.createElement("br", null), 
-								"7-11pm"
+					React.createElement(MDL.GridCell, {col: 4}, 
+						React.createElement(MDL.Card, {width: "256", height: "326", style: cardStyle_3, shadow: 8}, 
+							React.createElement(MDL.CardTitle, {height: "326"}, 
+								React.createElement("h4", {style: colorStyle}, 
+									"Featured event:", React.createElement("br", null), 
+									"May 24, 2016", React.createElement("br", null), 
+									"7-11pm"
+								)
+							), 
+							React.createElement(MDL.CardAction, {border: true, style: actionStyle_3}, 
+								React.createElement(MDL.Button, {type: "FlatButton", isPrimary: false}, 
+									"Read More"
+								)	
 							)
-						), 
-						React.createElement(MDL.CardAction, {border: true, style: actionStyle_3}, 
-							React.createElement(MDL.Button, {type: "FlatButton", isPrimary: true}, 
-								"Read More"
-							)	
 						)
 					)
 				)
