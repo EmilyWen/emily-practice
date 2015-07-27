@@ -8,23 +8,41 @@ var MDL = require('mdl-react');
 var App = React.createClass({displayName: "App",
 	render: function() {
 		var links = [
-			React.createElement("a", {href: "#"}, "Link 1"),
-			React.createElement("a", {href: "#"}, "Link 2"),
-			React.createElement("a", {href: "#"}, "Link 3"),
+			React.createElement("a", {href: "#home"}, "Home"),
+			React.createElement("a", {href: "#about"}, "About Me"),
+			React.createElement("a", {href: "#contact"}, "Contact Me"),
 		];
+		var sectionStyle0 = {
+			background: 
+			'url("https://dl.dropboxusercontent.com/u/107164257/aboutme_bg%20%28Medium%29.png" )',
+			backgroundRepeat: 'no-repeat',
+			backgroundPosition: 'right',
+			height: '620px',
+			width: '1500px',
+		};
+		var sectionStyle1 = {
+			background: '#DDDDDD',
+		};
+		var sectionStyle2 = {
+			background: '#AAAAAA',
+			// height: '620px',
+			// width: '1500px',
+		};
 		//card_1 style
 		var titleStyle = {
-			color: '#fff',
+			color: '#ffffff',
 			background : 
-			'url("http://i.imgur.com/L5YFTxg.png") bottom right 15% no-repeat #46B6AC',
+			'url("https://dl.dropboxusercontent.com/u/107164257/aboutme_re1%20%28Custom%29%20%282%29.jpg")  no-repeat',
+			backgroundSize: '100% 100%',
+			backgroundPosition: 'center',
 		};
 		var cardStyle_1 = {
-			margin: '50px 350px 0px ',
+			margin: 'auto',
 		};
 		//card_2 style
-		var cardStyle_2 = {
-			background: 'url("http://i.imgur.com/ZD4iVTs.jpg") center / cover',
-			margin: '0px 0px 0px 350px',
+		var gridStyle = {
+			margin: 'auto',
+			width:'1200px',
 		};
 		var actionStyle_2 = {
 			color : '#ffffff',
@@ -34,8 +52,7 @@ var App = React.createClass({displayName: "App",
 		};
 		//card_3 style
 		var cardStyle_3 = {
-			background: '#3E4EB8',
-			color: '#ffffff',
+			background: 'url("https://dl.dropboxusercontent.com/u/107164257/mywork1.jpg") contain',
 		};
 		var colorStyle = {
 			color: '#ffffff',
@@ -43,6 +60,60 @@ var App = React.createClass({displayName: "App",
 		var actionStyle_3 = {
 			borderColor: 'rgba(255, 255, 255, 0.2)',
 		};
+		//card-4 style
+		var buttonStyle = {
+			marginLeft: '860px',
+		};
+		var textStyle = {
+			paddingLeft: '25%',
+			paddingTop: '10%',
+			color: '#666666',
+		};
+		var textStyle2 = {
+			textAlign: 'center',
+			paddingTop: '30px',
+			color: '#666666',
+		};
+		var textStyle3 = {
+			marginLeft: '65%',
+			paddingTop: '5%',
+			color: '#666666',
+		};
+		var leftSection = {
+			links : [
+				React.createElement(MDL.Tooltip, {text: "Share", large: true}, 
+					React.createElement(MDL.Button, {type: "IconButton"}, 
+						React.createElement("button", {style: colorStyle}, 
+							React.createElement("i", {className: "material-icons"}, "share")
+						)
+					)
+				),
+				React.createElement(MDL.Tooltip, {text: "Cloud", large: true}, 
+					React.createElement(MDL.Button, {type: "IconButton", isRipple: true}, 
+						React.createElement("button", {style: colorStyle}, 
+							React.createElement("i", {className: "material-icons"}, "cloud")
+						)
+					)
+				),
+				React.createElement(MDL.Tooltip, {text: "Public", large: true}, 
+					React.createElement(MDL.Button, {type: "IconButton", isRipple: true}, 
+						React.createElement("button", {style: colorStyle}, 
+							React.createElement("i", {className: "material-icons"}, "public")
+						)
+					)
+				),
+			],
+		};
+		var rightSection = {
+			links : [
+				React.createElement(MDL.Button, {type: "RaisedButton"}, 
+					React.createElement("a", {href: "#home", style: colorStyle}, 
+						"Top"
+					)
+				)
+			],
+		};
+
 		return (
 			React.createElement("div", null, 
 			React.createElement(MDL.Layout, {
@@ -50,49 +121,105 @@ var App = React.createClass({displayName: "App",
 				isFixedHeader: true, 
 				headerLinks: links
 			}, 
-				React.createElement(MDL.Grid, null, 
-					React.createElement(MDL.GridCell, {col: 12}, 
-						React.createElement(MDL.Card, {width: "860", height: "450", shadow: 8, style: cardStyle_1}, 
-							React.createElement(MDL.CardTitle, {height: "350", style: titleStyle}, 
-								"The First Article"
-							), 
-							React.createElement(MDL.CardSupportingText, null, 
-								"The first Card."
-							), 
-							React.createElement(MDL.CardAction, {border: true}, 
-								React.createElement(MDL.Button, {type: "FlatButton", isPrimary: true}, 
-									"Read More"
-								)
-							)
+			React.createElement("div", {className: "section_0"}, 
+				React.createElement("section", null, 
+					React.createElement(MDL.Grid, {style: sectionStyle0}, 
+						React.createElement(MDL.GridCell, {col: 12}, 
+							React.createElement("a", {name: "home"}), 
+							React.createElement("div", {style: textStyle}, React.createElement("h1", null, "Emily Wen"))
 						)
 					)
-				), 
-				React.createElement(MDL.Grid, null, 
-					React.createElement(MDL.GridCell, {col: 8}, 
-						React.createElement(MDL.Card, {width: "556", height: "326", style: cardStyle_2, shadow: 8}, 
-							React.createElement(MDL.CardTitle, {height: "326"}), 
-							React.createElement(MDL.CardAction, {style: actionStyle_2}, 
-								React.createElement("span", {className: "demo-card-image__filename"}, "Image.jpg")
-							)
-						)
-					), 
-					React.createElement(MDL.GridCell, {col: 4}, 
-						React.createElement(MDL.Card, {width: "256", height: "326", style: cardStyle_3, shadow: 8}, 
-							React.createElement(MDL.CardTitle, {height: "326"}, 
-								React.createElement("h4", {style: colorStyle}, 
-									"Featured event:", React.createElement("br", null), 
-									"May 24, 2016", React.createElement("br", null), 
-									"7-11pm"
+				)
+			), 
+			React.createElement("div", {className: "section_1"}, 
+				React.createElement("section", {style: sectionStyle1}, 
+					React.createElement("a", {name: "about"}), 
+					React.createElement("div", {style: textStyle2}, React.createElement("h2", null, "About Me")), 
+					React.createElement(MDL.Grid, {style: gridStyle}, 
+						React.createElement(MDL.GridCell, {col: 4}, 
+							React.createElement(MDL.Card, {width: "384", height: "326", shadow: 8, style: cardStyle_1}, 
+								React.createElement(MDL.CardTitle, {height: "300", style: titleStyle}, 
+									"About Me"
+								), 
+								React.createElement(MDL.CardSupportingText, null, 
+									"About my colledge life."
+								), 
+								React.createElement(MDL.CardAction, {border: true}, 
+									React.createElement(MDL.Button, {type: "FlatButton", isPrimary: true}, 
+										"Read More"
+									)
 								)
-							), 
-							React.createElement(MDL.CardAction, {border: true, style: actionStyle_3}, 
-								React.createElement(MDL.Button, {type: "FlatButton", isPrimary: false}, 
-									"Read More"
-								)	
+							)
+						), 
+						React.createElement(MDL.GridCell, {col: 4}, 
+							React.createElement(MDL.Card, {width: "384", height: "326", shadow: 8, style: cardStyle_1}, 
+								React.createElement(MDL.CardTitle, {height: "300", style: titleStyle}, 
+									"About Me"
+								), 
+								React.createElement(MDL.CardSupportingText, null, 
+									"About my colledge life."
+								), 
+								React.createElement(MDL.CardAction, {border: true}, 
+									React.createElement(MDL.Button, {type: "FlatButton", isPrimary: true}, 
+										"Read More"
+									)
+								)
+							)
+						), 
+						React.createElement(MDL.GridCell, {col: 4}, 
+							React.createElement(MDL.Card, {width: "384", height: "326", style: cardStyle_1, shadow: 8}, 
+								React.createElement(MDL.CardTitle, {height: "300", style: titleStyle}, 
+									"Welcome"
+								), 
+								React.createElement(MDL.CardSupportingText, null, 
+									"The card supporting text...."
+								), 
+								React.createElement(MDL.CardAction, {border: true}, 
+									React.createElement(MDL.Button, {type: "FlatButton", isPrimary: true}, 
+										"GET STARTED"
+									)
+								), 
+								React.createElement(MDL.CardMenu, null, 
+									React.createElement(MDL.Menu, {openDirection: "bottom-right"}, 
+										React.createElement(MDL.Button, {type: "IconButton", style: colorStyle}, 
+											React.createElement("button", null, 
+												React.createElement("i", {className: "material-icons"}, "more_vert")
+											)
+										), 
+										React.createElement("div", null, " Share "), 
+										React.createElement("div", {disabled: true}, " Delete ")
+									)
+								)
 							)
 						)
 					)
 				)
+			), 
+			React.createElement("div", {className: "section_2"}, 
+				React.createElement("section", {style: sectionStyle2}, 
+					React.createElement("a", {name: "contact"}), 
+					React.createElement("div", {style: textStyle3}, React.createElement("h2", null, "Contact Me")), 
+					React.createElement(MDL.TextField, {
+						labelText: "Your name:", 
+						defaultValue: "Please fill your name.", 
+						isFloatingLabel: true}
+					), React.createElement("br", null), 
+					React.createElement(MDL.TextField, {
+						labelText: "Your e-mail:", 
+						defaultValue: "Please fill your e-mail.", 
+						isFloatingLabel: true}
+					), React.createElement("br", null), 
+					React.createElement(MDL.TextField, {
+						labelText: "Floating Multiline Textfield", 
+						isFloatingLabel: true, 
+						isMultiline: true}
+					)
+				)
+			), 
+			React.createElement(MDL.MiniFooter, {
+				leftSection: leftSection, 
+				rightSection: rightSection}
+			)
 			)
 			)
 		);
