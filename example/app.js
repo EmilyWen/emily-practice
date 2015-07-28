@@ -10,7 +10,7 @@ var App = React.createClass({displayName: "App",
 		var links = [
 			React.createElement("a", {href: "#home"}, "Home"),
 			React.createElement("a", {href: "#about"}, "About Me"),
-			React.createElement("a", {href: "#contact"}, "Contact Me"),
+			React.createElement("a", {href: "#contact"}, "Contact"),
 		];
 		var sectionStyle0 = {
 			background: 
@@ -24,7 +24,7 @@ var App = React.createClass({displayName: "App",
 			background: '#DDDDDD',
 		};
 		var sectionStyle2 = {
-			background: '#AAAAAA',
+			background: '#ffffff',
 			// height: '620px',
 			// width: '1500px',
 		};
@@ -44,25 +44,11 @@ var App = React.createClass({displayName: "App",
 			margin: 'auto',
 			width:'1200px',
 		};
-		var actionStyle_2 = {
-			color : '#ffffff',
-			height: '52px',
-			padding: '16px',
-			background: 'rgba(0, 0, 0, 0.2)',
-		};
-		//card_3 style
-		var cardStyle_3 = {
-			background: 'url("https://dl.dropboxusercontent.com/u/107164257/mywork1.jpg") contain',
+		var cellStyle = {
+			margin: '50px auto',
 		};
 		var colorStyle = {
 			color: '#ffffff',
-		};
-		var actionStyle_3 = {
-			borderColor: 'rgba(255, 255, 255, 0.2)',
-		};
-		//card-4 style
-		var buttonStyle = {
-			marginLeft: '860px',
 		};
 		var textStyle = {
 			paddingLeft: '25%',
@@ -71,13 +57,14 @@ var App = React.createClass({displayName: "App",
 		};
 		var textStyle2 = {
 			textAlign: 'center',
-			paddingTop: '30px',
+			padding: '30px',
 			color: '#666666',
 		};
-		var textStyle3 = {
-			marginLeft: '65%',
-			paddingTop: '5%',
-			color: '#666666',
+		var fbStyle = {
+			width: '100%',
+			height: '100%',
+			color: '#000000',
+			margin: 'auto',
 		};
 		var leftSection = {
 			links : [
@@ -106,9 +93,9 @@ var App = React.createClass({displayName: "App",
 		};
 		var rightSection = {
 			links : [
-				React.createElement(MDL.Button, {type: "RaisedButton"}, 
+				React.createElement(MDL.Button, {type: "FloatingActionButton"}, 
 					React.createElement("a", {href: "#home", style: colorStyle}, 
-						"Top"
+						React.createElement("i", {className: "material-icons"}, "keyboard_arrow_up")
 					)
 				)
 			],
@@ -126,7 +113,9 @@ var App = React.createClass({displayName: "App",
 					React.createElement(MDL.Grid, {style: sectionStyle0}, 
 						React.createElement(MDL.GridCell, {col: 12}, 
 							React.createElement("a", {name: "home"}), 
-							React.createElement("div", {style: textStyle}, React.createElement("h1", null, "Emily Wen"))
+							React.createElement("div", {style: textStyle}, 
+								React.createElement("h1", null, "Emily Wen")
+							)
 						)
 					)
 				)
@@ -134,11 +123,28 @@ var App = React.createClass({displayName: "App",
 			React.createElement("div", {className: "section_1"}, 
 				React.createElement("section", {style: sectionStyle1}, 
 					React.createElement("a", {name: "about"}), 
-					React.createElement("div", {style: textStyle2}, React.createElement("h2", null, "About Me")), 
+					React.createElement("div", {style: textStyle2}, 
+						React.createElement("h2", null, "About Me")
+					), 
 					React.createElement(MDL.Grid, {style: gridStyle}, 
-						React.createElement(MDL.GridCell, {col: 4}, 
-							React.createElement(MDL.Card, {width: "384", height: "326", shadow: 8, style: cardStyle_1}, 
-								React.createElement(MDL.CardTitle, {height: "300", style: titleStyle}, 
+						React.createElement(MDL.GridCell, {col: 4, style: cellStyle}, 
+							React.createElement(MDL.Card, {width: "325", height: "326", shadow: 8, style: cardStyle_1}, 
+								React.createElement(MDL.CardTitle, {height: "280", style: titleStyle}, 
+									"About Me"
+								), 
+								React.createElement(MDL.CardSupportingText, null, 
+									"About my college life."
+								), 
+								React.createElement(MDL.CardAction, {border: true}, 
+									React.createElement(MDL.Button, {type: "FlatButton", isPrimary: true}, 
+										"Read More"
+									)
+								)
+							)
+						), 
+						React.createElement(MDL.GridCell, {col: 4, style: cellStyle}, 
+							React.createElement(MDL.Card, {width: "325", height: "326", shadow: 8, style: cardStyle_1}, 
+								React.createElement(MDL.CardTitle, {height: "280", style: titleStyle}, 
 									"About Me"
 								), 
 								React.createElement(MDL.CardSupportingText, null, 
@@ -151,24 +157,9 @@ var App = React.createClass({displayName: "App",
 								)
 							)
 						), 
-						React.createElement(MDL.GridCell, {col: 4}, 
-							React.createElement(MDL.Card, {width: "384", height: "326", shadow: 8, style: cardStyle_1}, 
-								React.createElement(MDL.CardTitle, {height: "300", style: titleStyle}, 
-									"About Me"
-								), 
-								React.createElement(MDL.CardSupportingText, null, 
-									"About my colledge life."
-								), 
-								React.createElement(MDL.CardAction, {border: true}, 
-									React.createElement(MDL.Button, {type: "FlatButton", isPrimary: true}, 
-										"Read More"
-									)
-								)
-							)
-						), 
-						React.createElement(MDL.GridCell, {col: 4}, 
-							React.createElement(MDL.Card, {width: "384", height: "326", style: cardStyle_1, shadow: 8}, 
-								React.createElement(MDL.CardTitle, {height: "300", style: titleStyle}, 
+						React.createElement(MDL.GridCell, {col: 4, style: cellStyle}, 
+							React.createElement(MDL.Card, {width: "325", height: "326", style: cardStyle_1, shadow: 8}, 
+								React.createElement(MDL.CardTitle, {height: "280", style: titleStyle}, 
 									"Welcome"
 								), 
 								React.createElement(MDL.CardSupportingText, null, 
@@ -198,21 +189,71 @@ var App = React.createClass({displayName: "App",
 			React.createElement("div", {className: "section_2"}, 
 				React.createElement("section", {style: sectionStyle2}, 
 					React.createElement("a", {name: "contact"}), 
-					React.createElement("div", {style: textStyle3}, React.createElement("h2", null, "Contact Me")), 
-					React.createElement(MDL.TextField, {
-						labelText: "Your name:", 
-						defaultValue: "Please fill your name.", 
-						isFloatingLabel: true}
-					), React.createElement("br", null), 
-					React.createElement(MDL.TextField, {
-						labelText: "Your e-mail:", 
-						defaultValue: "Please fill your e-mail.", 
-						isFloatingLabel: true}
-					), React.createElement("br", null), 
-					React.createElement(MDL.TextField, {
-						labelText: "Floating Multiline Textfield", 
-						isFloatingLabel: true, 
-						isMultiline: true}
+					React.createElement("div", {style: textStyle2}, 
+						React.createElement("h2", null, "Contact")
+					), 
+					React.createElement(MDL.Grid, {style: gridStyle}, 
+						React.createElement(MDL.GridCell, {col: 3, style: cellStyle}, 
+							React.createElement(MDL.Button, {type: "FlatButton", isRipple: false, isPrimary: false, style: fbStyle}, 
+								React.createElement("a", {href: "https://www.facebook.com/wanhan.wen"}, React.createElement("img", {src: "https://dl.dropboxusercontent.com/u/107164257/icon_fb.gif", width: "100px", height: "100px"}), React.createElement("h5", null, "facebook"))
+							)
+						), 
+						React.createElement(MDL.GridCell, {col: 3, style: cellStyle}, 
+							React.createElement(MDL.Button, {type: "FlatButton", isRipple: false, isPrimary: false, style: fbStyle}, 
+								React.createElement("a", {href: "https://www.linkedin.com/home?trk=nav_responsive_tab_home"}, React.createElement("img", {src: "https://dl.dropboxusercontent.com/u/107164257/Linkedin_circle.svg.png", width: "100px", height: "100px"}), React.createElement("h5", null, "LinkedIn"))
+							)
+						), 
+						React.createElement(MDL.GridCell, {col: 3, style: cellStyle}, 
+							React.createElement(MDL.Button, {type: "FlatButton", isRipple: false, isPrimary: false, style: fbStyle}, 
+								React.createElement("a", {href: "https://www.pinterest.com/emily1992916/"}, React.createElement("img", {src: "https://dl.dropboxusercontent.com/u/107164257/Pinterest_Favicon.png", width: "100px", height: "100px"}), React.createElement("h5", null, "Pintrest"))
+							)
+						), 
+						React.createElement(MDL.GridCell, {col: 3, style: cellStyle}, 
+							React.createElement(MDL.Button, {type: "FlatButton", isRipple: false, isPrimary: false, style: fbStyle}, 
+								React.createElement("a", {href: "https://instagram.com/wenwanhan/"}, React.createElement("img", {src: "https://dl.dropboxusercontent.com/u/107164257/Instagram-icon.png", width: "100px", height: "100px"}), React.createElement("h5", null, "instagram"))
+							)
+						)
+					)
+				)
+			), 
+			React.createElement("div", {className: "section_3"}, 
+				React.createElement("section", {style: sectionStyle1}, 
+					React.createElement("div", {style: textStyle2}, 
+						React.createElement("h3", null, "send me an e-mail")
+					), 
+					React.createElement(MDL.Grid, {style: sectionStyle1}, 
+						React.createElement(MDL.GridCell, {col: 8}, 
+							React.createElement("div", {className: "name"}, 
+								"Please enter your name:", React.createElement("br", null), 
+								React.createElement(MDL.TextField, {
+								labelText: "Your name", 
+								isFloatingLabel: true}
+								)
+							), 
+							React.createElement("div", {className: "email"}, 
+								"Please enter your e-mail:", React.createElement("br", null), 
+								React.createElement(MDL.TextField, {
+								labelText: "Your e-mail", 
+								isFloatingLabel: true
+								}
+								)
+							), 
+							React.createElement("div", {className: "message"}, 
+								"Please write down your message:", React.createElement("br", null), 
+								React.createElement(MDL.TextField, {
+								labelText: "Your message", 
+								isFloatingLabel: true, 
+								isMultiline: true}
+								)
+							)
+						), 
+						React.createElement(MDL.GridCell, {col: 4}, 
+							React.createElement(MDL.Button, {type: "FloatingActionButton"}, 
+								React.createElement("a", {href: "#", style: colorStyle}, 
+								React.createElement("i", {className: "material-icons"}, "send")
+								)
+							)
+						)
 					)
 				)
 			), 
